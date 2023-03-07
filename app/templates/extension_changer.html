@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+<!-- タイトル -->
+{% block title %}Extension Changer{% endblock %}
+
+<!-- ヘッダー -->
+{% block head %}
+<link href="{{ url_for('static', filename='css/extension_changer_style.css') }}" rel="stylesheet">
+{% endblock %}
+
+<!-- コンテンツ -->
+{% block content %}
+<main role="main">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Extension Changer</h1>
+            <p class="lead text-muted">画像の拡張子を自動で変換するWebアプリです。</p>
+            <div id="show-alert"></div>
+            <div id="upFileWrap">
+                <div id="input-file">
+                    <div id="drop-area">
+                        <div id="drop-area-text">Drop images here. or </div>
+                        <label id="drop-area-file">
+                            <input type="file" multiple name="upload-file" id="upload-file" multiple> Choose File.
+                            <div id="uploaded-file"></div>
+                        </label>
+                    </div>
+                    <div id="not-drop-area">
+                        <div id="loader-icon"></div>
+                        <div id="success-icon">
+                            <img src="{{ url_for('static', filename='images/templates/extension/success.png') }}">
+                            <div id="success-text">拡張子変換に成功しました。ダウンロードは自動的に開始します。</div>
+                        </div>
+                        <div id="error-icon">
+                            <img src="{{ url_for('static', filename='images/templates/extension/error.png') }}">
+                            <div id="error-text">拡張子変換に失敗しました。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row mt-12" id="uploaded-file-info"></div>
+            <div class="form-row mt-6">
+                <!-- <div class="form-group col-md-6"> -->
+                <div class="form-group col-md-12">
+                    <div id="to-extension" class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active"><input type="radio" name="options" id="jpg" autocomplete="off" checked>JPG</label>
+                        <label class="btn btn-secondary"><input type="radio" name="options" id="jpeg" autocomplete="off">JPEG</label>
+                        <label class="btn btn-secondary"><input type="radio" name="options" id="png" autocomplete="off">PNG</label>
+                        <label class="btn btn-secondary"><input type="radio" name="options" id="ico" autocomplete="off">ICO</label>
+                        <label class="btn btn-secondary"><input type="radio" name="options" id="tiff" autocomplete="off">TIFF</label>
+                    </div>
+                <!-- </div> -->
+                <!-- <div class="form-group col-md-6"> -->
+                    <button type="submit" class="btn btn-info" id="send-file-button" disabled>Upload files</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <h4 class="mb-sm-4">How To Use</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="{{ url_for('static', filename='images/templates/extension/step-1.png') }}">
+                        <div class="card-body">
+                            <h5 class="card-title">Step 1.</h5>
+                            <p class="card-text">拡張子を変換したい画像をアップロードし、拡張子を選択します。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="{{ url_for('static', filename='images/templates/extension/step-2.png') }}">
+                        <div class="card-body">
+                            <h5 class="card-title">Step 2.</h5>
+                            <p class="card-text">画像のアップロードが終わると、ファイル名が表示され、アップロードボタンが有効になります。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="card-img-top" src="{{ url_for('static', filename='images/templates/extension/step-3.png') }}">
+                        <div class="card-body">
+                            <h5 class="card-title">Step 3.</h5>
+                            <p class="card-text">画像の拡張子の変換が完了すると、成功アイコンが表示され、自動的にダウンロードが始まります。</p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+<!-- フッター -->
+{% block footer %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/extensionChanger.js') }}"></script>
+{% endblock %}

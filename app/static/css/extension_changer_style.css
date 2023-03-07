@@ -1,0 +1,152 @@
+#input-file {
+    position: relative;
+    padding: 80px 0 50px;
+    text-align: center;
+}
+
+#drop-area {
+    position: absolute;
+    font-size: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 45px 0 0;
+    border: 2px dashed #494949;
+    background: rgba(22, 165, 191, 0);
+    transition: all 0.25s cubic-bezier(0.21, 0.51, 0.51, 1);
+}
+
+#drop-area.dragover {
+    border: 2px solid #16a5bf;
+    background: rgba(22, 165, 191, 0.6);
+}
+
+#drop-area-text,
+#drop-area-file {
+    display: inline-block;
+}
+
+#drop-area-file {
+    padding: 3px 10px;
+    margin-left: 10px;
+    border: solid 3px #16a5bf;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#drop-area-file:hover {
+    opacity: 0.5;
+}
+
+#not-drop-area {
+    display: none;
+    position: absolute;
+    font-size: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 45px 0 0;
+    border: 2px dashed #494949;
+    background: rgba(22, 165, 191, 0);
+    transition: all 0.25s cubic-bezier(0.21, 0.51, 0.51, 1);
+}
+
+#btn-input-file,
+#btn-upload-file {
+    display: table;
+    width: 200px;
+}
+
+#btn-input-file span,
+#btn-upload-file span{
+    position: relative;
+    z-index: 2;
+    display: table-cell;
+    width: 200px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: #333;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.form-group select {
+    border: solid 2px #333;
+    border-radius: 0px;
+    color: #333;
+}
+
+#uploaded-file-info {
+    margin: 10px auto;
+}
+
+#file-name-info {
+    border: solid 2px #000000;
+    border-radius: 5px;
+    margin: 0;
+}
+
+#send-file-button {
+    margin-left: 10px;
+}
+
+/* Loading Css */
+
+#loader-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: solid 4px;
+    border-color: #000000 #00000010 #00000010;
+    position: relative;
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes stagger {
+    25% {
+      border-color: #00000010 #000000 #00000010 #00000010;
+    }
+    50% {
+      border-color: #00000010 #00000010 #000000 #00000010;
+    }
+    75% {
+      border-color: #00000010 #00000010 #00000010 #000000;
+    }
+}
+
+/* After Download Css */
+
+#success-icon,
+#error-icon {
+    display: none;
+    /* width: 100%; */
+}
+#success-icon img,
+#error-icon img {
+    margin: 0, auto;
+    height: 40px; 
+}
+#success-text,
+#error-text {
+    font-size: 18px;
+}

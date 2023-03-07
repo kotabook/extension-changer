@@ -1,0 +1,50 @@
+:root {
+    --jumbotron-padding-top: 6rem;
+    --jumbotron-padding-buttom: 3rem;
+}
+  
+.jumbotron {
+    padding-top: var(--jumbotron-padding-top);
+    padding-bottom: var(--jumbotron-padding-buttom);
+    margin-bottom: 0;
+    background-color: #fff;
+}
+  
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+  
+.jumbotron-heading {
+    font-weight: 300;
+}
+  
+.jumbotron .container {
+    max-width: 50rem;
+}
+
+img {
+    height: 225px;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+}
+body {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+  
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+  
+footer p {
+    margin-bottom: .25rem;
+}
